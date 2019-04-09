@@ -79,7 +79,18 @@ namespace UBlockly
             switch (op)
             {
                 case "EQ":
-                    returnData.BooleanValue = argument0.Value == argument1.Value;
+                    if (argument0.Type == Define.EDataType.Number)
+                    {
+                        Number arg0 = (Number)argument0.Value;
+                        Number arg1 = (Number)argument1.Value;
+                        bool result = (arg0 == arg1);
+                        returnData.BooleanValue = result;
+                    }
+                    else
+                    {
+                        returnData.BooleanValue = (argument0.Value == argument1.Value);
+                    }
+                    
                     break;
                     
                 case "NEQ":
