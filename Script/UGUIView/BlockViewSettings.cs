@@ -69,7 +69,9 @@ namespace UBlockly.UGUI
         public static BlockViewSettings Get()
         {
             if (mInstance == null)
-                mInstance = Resources.Load<BlockViewSettings>("BlockViewSettings");
+                //mInstance = Resources.Load<BlockViewSettings>("BlockViewSettings");
+                //*****tmp for editor
+                mInstance = UnityEditor.AssetDatabase.LoadAssetAtPath<BlockViewSettings>("Assets/LogicProgram/Config/BlockViewSettings.asset");
             if (mInstance == null)
                 throw new Exception("There is no \"BlockViewSettings\" ScriptObject under Resources folder");
                 
