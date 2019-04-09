@@ -46,6 +46,8 @@ namespace UBlockly
             DataStruct input = ctor.Data; 
             //todo: 暂时用Debug.Log，后面根据UI输出框再定
             UnityEngine.Debug.Log("c# print: " + input.ToString());
+
+            UnityEngine.Debug.Log("c# gameobject name: " + block.Workspace.ObjectRoot.name);
         }
     }
 

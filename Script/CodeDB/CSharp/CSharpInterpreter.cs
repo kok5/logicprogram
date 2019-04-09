@@ -54,8 +54,33 @@ namespace UBlockly
             mVariableNames.Reset();
             mVariableDatas.Reset();
 
-            mRunningProcess = RunWorkspace(workspace);
+            var workspaceA = new Workspace();
+            var workspaceB = new Workspace();
+
+            workspaceA.ObjectRoot = new GameObject("gameObjectA");
+            workspaceB.ObjectRoot = new GameObject("gameObjectB");
+
+            LoadScript("111", workspaceA);
+            LoadScript("222", workspaceB);
+            //mRunningProcess = RunWorkspace(workspace);
+            //mRunner.StartProcess(mRunningProcess);
+
+            mRunningProcess = RunWorkspace(workspaceA);
             mRunner.StartProcess(mRunningProcess);
+
+            mRunningProcess = RunWorkspace(workspaceB);
+            mRunner.StartProcess(mRunningProcess);
+        }
+
+        public void LoadScript(string fileName, Workspace workspace)
+        {
+            string savePath = System.IO.Path.Combine(Application.persistentDataPath, "XmlSave");
+            string path = System.IO.Path.Combine(savePath, fileName + ".xml");
+            string inputXml;
+            inputXml = System.IO.File.ReadAllText(path);
+
+            var dom = UBlockly.Xml.TextToDom(inputXml);
+            UBlockly.Xml.DomToWorkspace(dom, workspace);
         }
 
         public override void Pause()
