@@ -16,7 +16,7 @@ MonoBehaviour:
   MinUnitWidth: 36
   ContentMargin:
     m_Left: 10
-    m_Right: 10
+    m_Right: 30
     m_Top: 10
     m_Bottom: 10
   ContentSpace: {x: 20, y: 0}
