@@ -62,7 +62,7 @@ namespace UBlockly
     /// manage all resources. 
     /// This can be customized according to resources management in each project 
     /// </summary>
-    [CreateAssetMenu(menuName = "UBlockly/BlockResSettings", fileName = "BlockResSettings")]
+    [CreateAssetMenu(menuName = "Scratch/BlockResSettings", fileName = "BlockResSettings")]
     public class BlockResMgr : ScriptableObject
     {
         [SerializeField] private BlockResLoadType m_LoadType;

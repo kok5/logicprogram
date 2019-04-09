@@ -31,6 +31,11 @@ namespace UBlockly
         /// The workspace's id
         /// </summary>
         public string Id;
+
+        /// <summary>
+        /// The space attaced to
+        /// </summary>
+        public GameObject ObjectRoot;
         
         public class WorkspaceOptions
         {

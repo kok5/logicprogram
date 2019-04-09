@@ -27,7 +27,7 @@ namespace UBlockly.UGUI
 {
     public class BlockViewEditor
     {
-        [MenuItem("UBlockly/Build Block Prefabs")]
+        [MenuItem("Scratch/Build Block Prefabs")]
         static void BuildBlockPrefabs()
         {
             Blockly.Dispose();

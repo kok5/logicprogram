@@ -1,6 +1,11 @@
 {
      "Style": "classic",
      "BlockCategoryList": [
+	      {
+               "CategoryName": "APPEARANCE",
+               "ColorHex": "#9966ff",
+               "BlockTypePrefix": "appearance"
+          },
           {
                "CategoryName": "LOGIC",
                "ColorHex": "#ffab19",

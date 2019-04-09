@@ -183,6 +183,10 @@ namespace UBlockly.UGUI
             
             //Lua.Interpreter.Run(mWorkspace);
             CSharp.Interpreter.Run(mWorkspace);
+
+            //var workspaceA = new Workspace();
+            //var workspaceB = new Workspace();
+
             m_StatusView.enabled = true;
         }
         

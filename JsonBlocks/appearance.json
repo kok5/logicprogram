@@ -1,0 +1,34 @@
+[
+  {
+    "type": "appearance_hide",
+    "message0": "%{BKY_TEXT_PRINT_TITLE}",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "TEXT"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+	"inputsInline" : true,
+    "colour": "%{BKY_TEXT_HUE}",
+    "tooltip":"%{BKY_TEXT_PRINT_TOOLTIP}",
+    "helpUrl":"%{BKY_TEXT_PRINT_HELPURL}"
+  },
+  {
+    "type": "appearance_show",
+    "message0": "%{BKY_TEXT_PRINT_TITLE}",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "TEXT"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+	"inputsInline" : true,
+    "colour": "%{BKY_TEXT_HUE}",
+    "tooltip":"%{BKY_TEXT_PRINT_TOOLTIP}",
+    "helpUrl":"%{BKY_TEXT_PRINT_HELPURL}"
+  }
+]

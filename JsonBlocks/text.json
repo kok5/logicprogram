@@ -247,6 +247,7 @@
     ],
     "previousStatement": null,
     "nextStatement": null,
+	"inputsInline" : true,
     "colour": "%{BKY_TEXT_HUE}",
     "tooltip":"%{BKY_TEXT_PRINT_TOOLTIP}",
     "helpUrl":"%{BKY_TEXT_PRINT_HELPURL}"
