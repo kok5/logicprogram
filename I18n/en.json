@@ -1,5 +1,6 @@
 {
 // Block Category Name
+	"APPEARANCE": "Appearance",
     "VARIABLE": "Variables",
     "PROCEDURE": "Procedures",
     "LOGIC": "Logic",
