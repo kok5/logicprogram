@@ -39,6 +39,8 @@ namespace UBlockly
 
         private IEnumerator mRunningProcess;
 
+        public Workspace RunningWorkspace = null;
+
         public CSharpInterpreter(Names variableNames, Datas variableDatas)
         {
             mVariableNames = variableNames;
@@ -49,26 +51,35 @@ namespace UBlockly
         public override void Run(Workspace workspace)
         {
             //*****tmp测试用加上的
-            string code = CSharp.Generator.WorkspaceToCode(workspace);
+            //string code = CSharp.Generator.WorkspaceToCode(workspace);
 
             mVariableNames.Reset();
             mVariableDatas.Reset();
 
-            var workspaceA = new Workspace();
-            var workspaceB = new Workspace();
+            //var workspaceA = new Workspace();
+            //var workspaceB = new Workspace();
 
-            workspaceA.ObjectRoot = new GameObject("gameObjectA");
-            workspaceB.ObjectRoot = new GameObject("gameObjectB");
+            //workspaceA.ObjectRoot = new GameObject("gameObjectA");
+            //workspaceB.ObjectRoot = new GameObject("gameObjectB");
 
-            LoadScript("111", workspaceA);
-            LoadScript("222", workspaceB);
-            //mRunningProcess = RunWorkspace(workspace);
+            //LoadScript("111", workspaceA);
+            //LoadScript("222", workspaceB);
+
+            //mRunningProcess = RunWorkspace(workspaceA);
             //mRunner.StartProcess(mRunningProcess);
 
-            mRunningProcess = RunWorkspace(workspaceA);
-            mRunner.StartProcess(mRunningProcess);
+            //mRunningProcess = RunWorkspace(workspaceB);
+            //mRunner.StartProcess(mRunningProcess);
 
-            mRunningProcess = RunWorkspace(workspaceB);
+            mRunningProcess = RunWorkspace(workspace);
+            mRunner.StartProcess(mRunningProcess);
+        }
+
+        public void OnEventFired(Workspace workspace)
+        {
+            mVariableNames.Reset();
+            mVariableDatas.Reset();
+            mRunningProcess = RunEventNextBlock(workspace);
             mRunner.StartProcess(mRunningProcess);
         }
 
@@ -124,6 +135,7 @@ namespace UBlockly
                 //exclude the procedure definition blocks
                 if (ProcedureDB.IsDefinition(block))
                     continue;
+
                 
                 yield return RunBlock(block);
             }
@@ -131,7 +143,20 @@ namespace UBlockly
             mRunningProcess = null;
             CSharp.Interpreter.FireUpdate(new InterpreterUpdateState(InterpreterUpdateState.Stop));
         }
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="workspace"></param>
+        /// <returns></returns>
+        IEnumerator RunEventNextBlock(Workspace workspace)
+        {
+            if (workspace.EventNextBlock != null)
+            {
+                yield return RunBlock(workspace.EventNextBlock);
+            }
+        }
+
         /// <summary>
         /// run the block in a coroutine way
         /// </summary>
@@ -149,9 +174,19 @@ namespace UBlockly
                 yield return GetBlockInterpreter(block).Run(block);
                 CSharp.Interpreter.FireUpdate(new InterpreterUpdateState(InterpreterUpdateState.FinishBlock, block));
             }
-            
+
             if (block.NextBlock != null)
-                yield return RunBlock(block.NextBlock);
+            {
+                if (block.Type == "appearance_show")
+                {
+                    block.Workspace.EventNextBlock = block.NextBlock;
+                }
+                else
+                {
+                    yield return RunBlock(block.NextBlock);
+                }
+            }
+                
         }
         
         /// <summary>

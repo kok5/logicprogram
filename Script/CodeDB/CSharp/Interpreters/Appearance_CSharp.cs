@@ -47,14 +47,14 @@ namespace UBlockly
             Base.Events.ins.Add("prefab40-001", "event1", (object xx) =>
             {
                 UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "003 处理回调！！！");
-                UnityEngine.Debug.Log("@@@@@@@@@@@@@@ Process prefab40-001  event1");
 
+                if (CSharp.Interpreter.RunningWorkspace != null)
+                {
+                    CSharp.Interpreter.OnEventFired(CSharp.Interpreter.RunningWorkspace);
+                    CSharp.Interpreter.RunningWorkspace = null;
+                }
                 return true;
             });
-
-            UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "002 触发事件！！！");
-
-            Base.Events.ins.Fire("prefab40-001", "event1");
         }
     }
 
@@ -71,7 +71,7 @@ namespace UBlockly
 
             //UnityEngine.Debug.Log("c# gameobject name: " + block.Workspace.ObjectRoot.name);
 
-            //UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "隐藏！！");
+            UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "不要马上看到我！！ 隐藏！！");
         }
     }
 
@@ -80,6 +80,12 @@ namespace UBlockly
     {
         protected override DataStruct Execute(Block block)
         {
+            UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "002 触发事件！！！");
+
+            CSharp.Interpreter.RunningWorkspace = block.Workspace;
+
+            Base.Events.ins.Fire("prefab40-001", "event1");
+
             int distance = 1001;
             return new DataStruct(distance);
 

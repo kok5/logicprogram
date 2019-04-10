@@ -36,6 +36,8 @@ namespace UBlockly
         /// The space attaced to
         /// </summary>
         public GameObject ObjectRoot;
+
+        public Block EventNextBlock = null;
         
         public class WorkspaceOptions
         {
