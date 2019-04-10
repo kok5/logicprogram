@@ -17,6 +17,11 @@
                "BlockTypePrefix": "controls"
           },
           {
+               "CategoryName": "EVENT",
+               "ColorHex": "#808099",
+               "BlockTypePrefix": "event"
+          },
+          {
                "CategoryName": "MATH",
                "ColorHex": "#59c059",
                "BlockTypePrefix": "math"

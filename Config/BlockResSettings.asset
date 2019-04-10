@@ -48,6 +48,9 @@ MonoBehaviour:
   - IndexName: appearance
     ResName: appearance
     TextFile: {fileID: 4900000, guid: 90fa44e9d9fb2de4582d1b54973e8385, type: 3}
+  - IndexName: event
+    ResName: event
+    TextFile: {fileID: 4900000, guid: cafb5b2e156db6e4a8ba5ec11675eea9, type: 3}
   m_ToolboxFiles:
   - IndexName: default
     ResName: toolbox_default

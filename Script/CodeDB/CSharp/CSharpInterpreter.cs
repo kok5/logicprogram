@@ -177,7 +177,8 @@ namespace UBlockly
 
             if (block.NextBlock != null)
             {
-                if (block.Type == "appearance_show")
+                //判断是事件Block ("当")
+                if ((block.PreviousConnection == null) && (block.NextConnection != null))
                 {
                     block.Workspace.EventNextBlock = block.NextBlock;
                 }

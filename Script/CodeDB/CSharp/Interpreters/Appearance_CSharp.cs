@@ -45,25 +45,8 @@ namespace UBlockly
 
             //CSharp.Interpreter.RunningWorkspace = block.Workspace;
 
-            UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "001 注册回调！！！");
-            Base.Events.ins.Add("prefab40-001", "event1", (object xx) =>
-            {
-                UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "003 处理回调！！！");
-                UnityEngine.Debug.Log("!!!!!!!!!!!!!!!!: " + xx);
-                Workspace wp = xx as Workspace;
-                if (wp != null)
-                {
-                    UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "Event传送workspace");
+            UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "appearance_show！！");
 
-                    CSharp.Interpreter.OnEventFired(wp);
-                    CSharp.Interpreter.RunningWorkspace = null;
-                }
-                
-
-                return true;
-            });
-
-            
         }
     }
 
@@ -91,7 +74,7 @@ namespace UBlockly
         {
             UnityEngine.Debug.LogFormat("<color=green>{0}.</color>", "002 触发事件！！！");
 
-            Base.Events.ins.Fire("prefab40-001", "event1", false, block.Workspace);
+            Base.Events.ins.Fire("event_touch", "event1", false, block.Workspace);
 
             int distance = 1001;
             return new DataStruct(distance);

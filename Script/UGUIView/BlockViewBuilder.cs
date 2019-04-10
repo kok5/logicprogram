@@ -56,6 +56,11 @@ namespace UBlockly.UGUI
 
         public static GameObject BuildBlockView(Block block)
         {
+            if (block.Type == "event_touch")
+            {
+                Debug.Log("111111111111111111");
+            }
+
             GameObject blockPrefab = BlockViewSettings.Get().PrefabRoot;
             if (block.OutputConnection != null) 
                 blockPrefab = BlockViewSettings.Get().PrefabRootOutput;
@@ -63,6 +68,8 @@ namespace UBlockly.UGUI
                 blockPrefab = BlockViewSettings.Get().PrefabRootPrevNext;
             else if (block.PreviousConnection != null)
                 blockPrefab = BlockViewSettings.Get().PrefabRootPrev;
+            else if (block.NextConnection != null)
+                blockPrefab = BlockViewSettings.Get().PrefabRootNext;
 
             GameObject blockObj = GameObject.Instantiate(blockPrefab);
             blockObj.name = "Block_" + block.Type;

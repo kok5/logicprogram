@@ -77,8 +77,10 @@ namespace UBlockly.UGUI
 
             m_LoadBtn.onClick.AddListener(() =>
             {
-                if (!mIsLoadPanelShow) ShowLoadPanel();
-                else HideLoadPanel();
+                Debug.Log("Fire event");
+                Base.Events.ins.Fire("event_touch", "event1", false, CSharp.Interpreter.RunningWorkspace);
+                //if (!mIsLoadPanelShow) ShowLoadPanel();
+                //else HideLoadPanel();
             });
             
             m_SaveOkBtn.onClick.AddListener(SaveXml);

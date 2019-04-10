@@ -5,6 +5,7 @@
     "PROCEDURE": "Procedures",
     "LOGIC": "Logic",
     "CONTROL": "Controls",
+	"EVENT": "Events",
     "MATH": "Math",
     "TEXT": "Text",
     "LIST": "Lists",
@@ -53,9 +54,15 @@
     "UNDO": "Undo",
     /// context menu - Undo the previous undo action.\n(Identical|Redo)
     "REDO": "Redo",
+//--------------------------------------------------------------------------------------	
 // Appearance
 	"APPEARANCE_HIDE_TITLE": "hide",
 	"APPEARANCE_SHOW_TITLE": "show",
+	
+//--------------------------------------------------------------------------------------	
+// Event
+	"EVENT_TOUCH_TITLE": "when touch",
+	
 // Variable renaming.
     /// prompt - This message is only seen in the Opera browser.  With most browsers: users can edit numeric values in blocks by just clicking and typing.  Opera does not allows this: so we have to open a new window and prompt users with this message to chanage a value.
     "CHANGE_VALUE_TITLE": "Change value:",
