@@ -157,6 +157,34 @@ namespace UBlockly
         }
     }
 
+
+    [CodeInterpreter(BlockType = "logic_operation3")]
+    public class Logic_Operation3_Cmdtor : EnumeratorCmdtor
+    {
+        protected override IEnumerator Execute(Block block)
+        {
+            CustomEnumerator ctor = CSharp.Interpreter.ValueReturn(block, "A", new DataStruct(false));
+            yield return ctor;
+            DataStruct argument0 = ctor.Data;
+
+            ctor = CSharp.Interpreter.ValueReturn(block, "B", new DataStruct(false));
+            yield return ctor;
+            DataStruct argument1 = ctor.Data;
+
+            ctor = CSharp.Interpreter.ValueReturn(block, "C", new DataStruct(false));
+            yield return ctor;
+            DataStruct argument2 = ctor.Data;
+
+            if (argument0.Type != argument1.Type || argument0.Type != Define.EDataType.Boolean)
+                throw new Exception("arguments of block logic_operation should be the same BOOLEAN type");
+
+            DataStruct returnData = new DataStruct(false);
+            returnData.BooleanValue = argument0.BooleanValue && argument1.BooleanValue && argument2.BooleanValue;
+
+            ReturnData(returnData);
+        }
+    }
+
     [CodeInterpreter(BlockType = "logic_negate")]
     public class Logic_Negate_Cmdtor : EnumeratorCmdtor
     {

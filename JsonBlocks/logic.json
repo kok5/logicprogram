@@ -35,6 +35,7 @@
         "name": "DO0"
       }
     ],
+	"inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
     "colour": "%{BKY_LOGIC_HUE}",
@@ -70,6 +71,7 @@
         "align": "RIGHT"
       }
     ],
+	"inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
     "colour": "%{BKY_LOGIC_HUE}",
@@ -130,6 +132,43 @@
       {
         "type": "input_value",
         "name": "B",
+        "check": "Boolean"
+      }
+    ],
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": "%{BKY_LOGIC_HUE}",
+    "helpUrl": "%{BKY_LOGIC_OPERATION_HELPURL}",
+    "extensions": ["logic_op_tooltip"]
+  },
+  
+    {
+    "type": "logic_operation3",
+    "message0": "%1 %2 %3 %4 %5",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "A",
+        "check": "Boolean"
+      },
+      {
+        "type": "field_label",
+        "name": "NAME",
+        "text": "AND"
+      },
+      {
+        "type": "input_value",
+        "name": "B",
+        "check": "Boolean"
+      },
+      {
+        "type": "field_label",
+        "name": "NAME",
+        "text": "AND"
+      },
+	  {
+        "type": "input_value",
+        "name": "C",
         "check": "Boolean"
       }
     ],

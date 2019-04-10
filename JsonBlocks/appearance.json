@@ -1,13 +1,7 @@
 [
   {
     "type": "appearance_hide",
-    "message0": "%{BKY_TEXT_PRINT_TITLE}",
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "TEXT"
-      }
-    ],
+    "message0": "%{BKY_APPEARANCE_HIDE_TITLE}",
     "previousStatement": null,
     "nextStatement": null,
 	"inputsInline" : true,
@@ -17,18 +11,21 @@
   },
   {
     "type": "appearance_show",
-    "message0": "%{BKY_TEXT_PRINT_TITLE}",
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "TEXT"
-      }
-    ],
+    "message0": "%{BKY_APPEARANCE_SHOW_TITLE}",
     "previousStatement": null,
     "nextStatement": null,
 	"inputsInline" : true,
     "colour": "%{BKY_TEXT_HUE}",
     "tooltip":"%{BKY_TEXT_PRINT_TOOLTIP}",
     "helpUrl":"%{BKY_TEXT_PRINT_HELPURL}"
+  },
+  {
+    "type": "appearance_distance_get",
+    "message0": "distance",
+    "output": null,
+    "colour": "%{BKY_VARIABLES_HUE}",
+    "helpUrl": "%{BKY_VARIABLES_GET_HELPURL}",
+    "tooltip": "%{BKY_VARIABLES_GET_TOOLTIP}",
+    "extensions": ["contextMenu_variableSetterGetter"]
   }
 ]
