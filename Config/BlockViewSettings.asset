@@ -41,6 +41,8 @@ MonoBehaviour:
     type: 3}
   PrefabRootPrev: {fileID: 1921481130454984, guid: 3b4c65dcecc2948a8bac3dc380741aec,
     type: 3}
+  PrefabRootNext: {fileID: 1921481130454984, guid: f3ec7b048a23b854f9fdce9f5f296164,
+    type: 3}
   PrefabRootPrevNext: {fileID: 1921481130454984, guid: d18515e97282947c5bb1a575bc1d6c4b,
     type: 3}
   PrefabInputValue: {fileID: 1689575840245040, guid: 4bddd5386383f4174b9515861e0d9795,

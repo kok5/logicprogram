@@ -357,7 +357,9 @@ namespace UBlockly
             if (mInstance == null)
                 //mInstance = Resources.Load<BlockResMgr>("BlockResSettings");
                 //*****tmp for editor
+#if UNITY_EDITOR && !FORCE_USE_AB
                 mInstance = UnityEditor.AssetDatabase.LoadAssetAtPath<BlockResMgr>("Assets/LogicProgram/Config/BlockResSettings.asset");
+#endif
             if (mInstance == null)
                 throw new Exception("There is no \"BlockResSettings\" ScriptObject under Resources folder");
                 
